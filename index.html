@@ -66,6 +66,7 @@
   .tags span { font-size: 12px; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; color: #d0d0d0; }
   .card .more { margin-top: 18px; font-size: 14px; font-weight: 500; color: var(--accent); }
   .card .more:hover { text-decoration: underline; }
+  .card .actions { display: flex; flex-wrap: wrap; gap: 0 24px; }
   .badge { align-self: flex-start; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; background: var(--accent); color: var(--bg); border-radius: 6px; padding: 3px 8px; margin-bottom: 14px; }
 
   /* About */
@@ -149,7 +150,6 @@
     <div class="grid">
 
       <article class="card">
-        <span class="badge">Featured</span>
         <h3>Spark Resume Screener</h3>
         <p>Distributed pipeline that classifies resumes into 43 job categories: Spark OCR (Tess4J), Spark NLP NER with ESCO skill matching, then a fine-tuned RoBERTa model, served through a Flask app that scores job fit.</p>
         <ul>
@@ -190,7 +190,10 @@
           <li><strong>102</strong> tests, Streamlit app, Docker</li>
         </ul>
         <div class="tags"><span>Python</span><span>Monte Carlo</span><span>K-Means</span><span>RAG</span><span>Streamlit</span></div>
-        <a class="more" href="https://github.com/Prasanna070705/Smart-Capital-Hedging-IND---USA-" target="_blank" rel="noopener">View on GitHub →</a>
+        <div class="actions">
+          <a class="more" href="https://smart-capital-hedging.streamlit.app" target="_blank" rel="noopener">Live demo →</a>
+          <a class="more" href="https://github.com/Prasanna070705/Smart-Capital-Hedging-IND---USA-" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
       </article>
 
       <article class="card">
@@ -207,7 +210,10 @@
         <h3>Malaria Screener</h3>
         <p>Streamlit app that detects malaria parasites and white blood cells in blood-smear images. A YOLOv8-nano detector with an extra P2 head for tiny objects, followed by a CNN that refines each box as parasite, WBC or artifact.</p>
         <div class="tags"><span>YOLOv8</span><span>PyTorch</span><span>OpenCV</span><span>Streamlit</span></div>
-        <a class="more" href="https://github.com/Prasanna070705/Malaria-Screener-GRADCAM" target="_blank" rel="noopener">View on GitHub →</a>
+        <div class="actions">
+          <a class="more" href="https://huggingface.co/spaces/Mustangbooks/Malaria-App-GradCAM" target="_blank" rel="noopener">Live demo →</a>
+          <a class="more" href="https://github.com/Prasanna070705/Malaria-Screener-GRADCAM" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
       </article>
 
       <article class="card">
