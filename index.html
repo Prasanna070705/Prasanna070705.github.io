@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dasigi Prasanna Jagannath — AI Engineer</title>
+<meta name="description" content="Portfolio of Dasigi Prasanna Jagannath, AI & Data Science undergraduate building ML, computer vision, NLP and intelligent systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1e1e1e;
+    --bg-2: #252525;
+    --card: #2a2a2a;
+    --line: #3a3a3a;
+    --text: #ffffff;
+    --muted: #a7a7a7;
+    --accent: #b9b4f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: "Poppins", system-ui, sans-serif; line-height: 1.6; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(30,30,30,.85); backdrop-filter: blur(8px); }
+  nav .wrap { display: flex; justify-content: flex-end; align-items: center; gap: 32px; height: 72px; }
+  nav .links { display: flex; gap: 32px; font-size: 14px; }
+  nav .links a:hover, .social a:hover { color: var(--accent); }
+  nav .sep { width: 1px; height: 20px; background: var(--muted); }
+  .social { display: flex; gap: 20px; }
+  .social svg { width: 18px; height: 18px; fill: currentColor; display: block; }
+
+  /* Hero */
+  .hero { position: relative; overflow: hidden; }
+  .hero .wrap { display: grid; grid-template-columns: 1fr 1fr; align-items: end; min-height: calc(100vh - 72px); max-height: 820px; }
+  .hero-text { align-self: center; padding: 48px 0; }
+  .hero-text .hi { font-weight: 700; font-size: 16px; letter-spacing: .02em; }
+  .hero-text h1 { font-weight: 800; font-size: clamp(40px, 6vw, 72px); line-height: 1.05; text-transform: uppercase; margin: 12px 0 24px; }
+  .hero-text p { color: var(--muted); font-weight: 300; max-width: 420px; margin-bottom: 40px; }
+  .btn { display: inline-block; border: 2px solid var(--text); border-radius: 10px; padding: 12px 22px; font-weight: 700; text-transform: uppercase; font-size: 15px; transition: .2s; }
+  .btn:hover { background: var(--text); color: var(--bg); }
+  .btn.ghost { border-color: var(--line); margin-left: 12px; }
+  .hero-photo { position: relative; align-self: end; display: flex; justify-content: center; height: 100%; }
+  .hero-photo::before { content: ""; position: absolute; inset: 0 -40% 0 -10%; background: radial-gradient(ellipse at 55% 55%, #3d3d3d 0%, transparent 60%); }
+  .hero-photo img { position: relative; height: 100%; max-height: 760px; width: auto; max-width: 100%; object-fit: contain; object-position: bottom; }
+
+  /* Sections */
+  section { padding: 96px 0; }
+  .eyebrow { color: var(--accent); font-weight: 500; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; }
+  h2 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; text-transform: uppercase; line-height: 1.1; margin: 8px 0 40px; }
+  .alt { background: var(--bg-2); }
+
+  /* Projects */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; transition: transform .2s, border-color .2s; }
+  .card:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .card h3 { font-size: 20px; line-height: 1.3; margin-bottom: 10px; }
+  .card p { color: var(--muted); font-size: 14px; font-weight: 300; }
+  .card ul { color: var(--muted); font-size: 14px; font-weight: 300; margin: 14px 0 0 18px; }
+  .card ul li { margin-bottom: 4px; }
+  .card strong { color: var(--text); font-weight: 500; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 20px; }
+  .tags span { font-size: 12px; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; color: #d0d0d0; }
+  .card .more { margin-top: 18px; font-size: 14px; font-weight: 500; color: var(--accent); }
+  .card .more:hover { text-decoration: underline; }
+  .badge { align-self: flex-start; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; background: var(--accent); color: var(--bg); border-radius: 6px; padding: 3px 8px; margin-bottom: 14px; }
+
+  /* About */
+  .about { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; }
+  .about p { color: var(--muted); font-weight: 300; margin-bottom: 16px; }
+  .timeline { list-style: none; border-left: 2px solid var(--line); padding-left: 24px; }
+  .timeline li { position: relative; margin-bottom: 28px; }
+  .timeline li::before { content: ""; position: absolute; left: -31px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
+  .timeline .when { color: var(--muted); font-size: 13px; }
+  .timeline h4 { font-size: 16px; }
+  .timeline .what { color: var(--muted); font-size: 14px; font-weight: 300; }
+  .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+  .facts div { background: var(--card); border-radius: 12px; padding: 16px; }
+  .facts b { display: block; font-size: 13px; color: var(--accent); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; }
+  .facts span { font-size: 14px; color: #d0d0d0; font-weight: 300; }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+  .skills h4 { font-size: 15px; margin-bottom: 10px; }
+
+  /* Contact */
+  .contact { text-align: center; }
+  .contact p { color: var(--muted); font-weight: 300; max-width: 520px; margin: 0 auto 36px; }
+  footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: 13px; text-align: center; }
+
+  @media (max-width: 860px) {
+    nav .links { gap: 18px; }
+    nav .sep, nav .social { display: none; }
+    nav .wrap { justify-content: center; }
+    .hero .wrap { grid-template-columns: 1fr; min-height: 0; max-height: none; }
+    .hero-text { padding-bottom: 32px; text-align: center; }
+    .hero-text p { margin-left: auto; margin-right: auto; }
+    .hero-photo img { max-height: 460px; }
+    .about { grid-template-columns: 1fr; gap: 40px; }
+    .grid { grid-template-columns: 1fr; }
+    .btn.ghost { margin: 12px 0 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contacts</a>
+    </div>
+    <span class="sep"></span>
+    <div class="social">
+      <a href="https://github.com/Prasanna070705" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>
+      </a>
+      <a href="mailto:prasanna123sonu@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7H4zm16 2.8-8 5-8-5V17h16V9.8z"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="hi">HI, I'M PRASANNA</div>
+      <h1>I build<br>AI systems</h1>
+      <p>AI &amp; Data Science undergraduate at Amrita Vishwa Vidyapeetham, building machine learning, computer vision and NLP applications that run from the cloud down to edge hardware.</p>
+      <a class="btn" href="#projects">View my projects</a>
+      <a class="btn ghost" href="resume.pdf" target="_blank">Resume</a>
+    </div>
+    <div class="hero-photo">
+      <img src="photo.png" alt="Portrait of Dasigi Prasanna Jagannath">
+    </div>
+  </div>
+</header>
+
+<section class="alt" id="projects">
+  <div class="wrap">
+    <div class="eyebrow">Selected work</div>
+    <h2>Projects</h2>
+    <div class="grid">
+
+      <article class="card">
+        <span class="badge">Featured</span>
+        <h3>Spark Resume Screener</h3>
+        <p>Distributed pipeline that classifies resumes into 43 job categories: Spark OCR (Tess4J), Spark NLP NER with ESCO skill matching, then a fine-tuned RoBERTa model, served through a Flask app that scores job fit.</p>
+        <ul>
+          <li><strong>81.5%</strong> test accuracy, weighted F1 <strong>0.814</strong></li>
+          <li>Trained on <strong>12,365</strong> resumes with completeness-aware stratified splits</li>
+        </ul>
+        <div class="tags"><span>Scala</span><span>Apache Spark</span><span>Spark NLP</span><span>RoBERTa</span><span>PyTorch</span><span>Flask</span></div>
+        <a class="more" href="https://github.com/Prasanna070705/SparkScala-Resume-Screener" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <article class="card">
+        <span class="badge">IEEE SISCON 2025</span>
+        <h3>Eye Gesture Controlled Wheelchair</h3>
+        <p>Wheelchair prototype for quadriplegic assistance with real-time gaze-based navigation. OpenCV vision module on Raspberry Pi talks to the embedded hardware through a Flask REST API.</p>
+        <ul>
+          <li>Published: “Eye Gesture Controlled Wheelchair for Quadriplegic Assistance”</li>
+        </ul>
+        <div class="tags"><span>OpenCV</span><span>Raspberry Pi</span><span>Flask</span><span>Python</span></div>
+        <a class="more" href="https://doi.org/10.1109/SISCON66686.2025.11408976" target="_blank" rel="noopener">Read the paper →</a>
+      </article>
+
+      <article class="card">
+        <h3>Smart Telecom Revenue &amp; Churn Command Center</h3>
+        <p>Operations research tool on the IBM Telco churn dataset. A nonlinear program sets prices for 10 services; a binary integer program picks which at-risk customers get which retention offer; a coupling sweep links the two.</p>
+        <ul>
+          <li>Lifetime profit <strong>+7.6%</strong> ($17.01M → $18.31M) in the default scenario</li>
+          <li>Retention plan within <strong>0.0021%</strong> of the LP bound</li>
+        </ul>
+        <div class="tags"><span>Python</span><span>SciPy</span><span>HiGHS MILP</span><span>Node.js</span><span>React</span><span>Docker</span></div>
+        <a class="more" href="https://github.com/Prasanna070705/smart-telecom-command-center" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <article class="card">
+        <h3>Smart Capital Hedging (India–USA)</h3>
+        <p>Team project: tells an Indian importer how much of a future USD payment to lock with a forward contract, given market regime and risk tolerance. Bootstrap Monte Carlo, K-Means regimes, walk-forward backtest and a RAG chatbot.</p>
+        <ul>
+          <li>Backtest worst case <strong>5.65%</strong> vs 14.65% for a static 50% hedge</li>
+          <li><strong>102</strong> tests, Streamlit app, Docker</li>
+        </ul>
+        <div class="tags"><span>Python</span><span>Monte Carlo</span><span>K-Means</span><span>RAG</span><span>Streamlit</span></div>
+        <a class="more" href="https://github.com/Prasanna070705/Smart-Capital-Hedging-IND---USA-" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <article class="card">
+        <h3>Hide — Real-Life Hide &amp; Seek</h3>
+        <p>GPS multiplayer hide-and-seek for Android and web with 8 game modes, a deterministic shrinking zone, chat, radar and live maps. No game server: Firebase security rules enforce the game logic.</p>
+        <ul>
+          <li><strong>96</strong> Dart tests + <strong>66</strong> security-rules tests</li>
+        </ul>
+        <div class="tags"><span>Flutter</span><span>Dart</span><span>Firebase</span><span>OpenStreetMap</span></div>
+        <a class="more" href="https://github.com/Prasanna070705/hide-game" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <article class="card">
+        <h3>Malaria Screener</h3>
+        <p>Streamlit app that detects malaria parasites and white blood cells in blood-smear images. A YOLOv8-nano detector with an extra P2 head for tiny objects, followed by a CNN that refines each box as parasite, WBC or artifact.</p>
+        <div class="tags"><span>YOLOv8</span><span>PyTorch</span><span>OpenCV</span><span>Streamlit</span></div>
+        <a class="more" href="https://github.com/Prasanna070705/Malaria-Screener-GRADCAM" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <article class="card">
+        <h3>HomeNav: Autonomous Delivery Robot</h3>
+        <p>Indoor delivery robot with map-based navigation using BFS path planning, plus a Flask REST API for map uploads, real-time monitoring and remote control.</p>
+        <div class="tags"><span>Raspberry Pi</span><span>Python</span><span>Flask</span></div>
+      </article>
+
+      <article class="card">
+        <h3>Child Monitoring Robot</h3>
+        <p>Child safety monitor running TensorFlow Lite and OpenCV on Raspberry Pi for real-time human and cry detection, with automated email and SMS alerts.</p>
+        <div class="tags"><span>TensorFlow Lite</span><span>OpenCV</span><span>Django</span><span>Raspberry Pi</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">Who I am</div>
+    <h2>About me</h2>
+    <div class="about">
+      <div>
+        <p>I'm an AI &amp; Data Science undergraduate with hands-on experience in machine learning, computer vision, NLP, generative AI and intelligent systems. I build with Python, PyTorch, Hugging Face, Spark and Flask, and deploy to everything from Docker containers to a Jetson Orin Nano.</p>
+        <p>I care about production-ready AI: systems that are tested, measured honestly and solve real engineering and enterprise problems.</p>
+        <p>Outside code: Co-Head of Anokha Tech Fair 2026, Bhaava Drama Club, story-driven games, motorcycle travel, and Heartfulness meditation.</p>
+        <div class="facts">
+          <div><b>Based in</b><span>Hyderabad, India</span></div>
+          <div><b>Languages</b><span>English, Telugu, Hindi, German (beginner)</span></div>
+          <div><b>Certifications</b><span>Deloitte Australia &amp; Tata Group Data Analytics (Forage)</span></div>
+          <div><b>Publication</b><span>IEEE SISCON 2025</span></div>
+        </div>
+      </div>
+      <ul class="timeline">
+        <li><div class="when">2023 – Present</div><h4>Amrita Vishwa Vidyapeetham, Coimbatore</h4><div class="what">B.Tech, Artificial Intelligence &amp; Data Science · CGPA 8.29 / 10</div></li>
+        <li><div class="when">2022</div><h4>FIITJEE Limited, Hyderabad</h4><div class="what">Class XII · 85.2%</div></li>
+        <li><div class="when">2020</div><h4>FIITJEE World School, Hyderabad</h4><div class="what">Class X · 9.8 / 10</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="skills">
+  <div class="wrap">
+    <div class="eyebrow">Toolbox</div>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card"><h4>Programming</h4><div class="tags"><span>Python</span><span>C++14/17</span><span>SQL</span><span>Scala</span><span>MATLAB</span></div></div>
+      <div class="card"><h4>AI Engineering</h4><div class="tags"><span>Machine Learning</span><span>Deep Learning</span><span>NLP</span><span>Generative AI</span><span>LLM Apps</span></div></div>
+      <div class="card"><h4>ML Frameworks</h4><div class="tags"><span>PyTorch</span><span>TensorFlow</span><span>Hugging Face</span><span>TensorRT</span><span>Reinforcement Learning</span></div></div>
+      <div class="card"><h4>Computer Vision</h4><div class="tags"><span>OpenCV</span><span>YOLOv8 / v11n</span><span>Real-time Detection</span></div></div>
+      <div class="card"><h4>Web, Data &amp; Tools</h4><div class="tags"><span>Flask</span><span>REST APIs</span><span>Docker</span><span>Apache Spark</span><span>Git</span><span>Linux</span></div></div>
+      <div class="card"><h4>Edge Hardware</h4><div class="tags"><span>NVIDIA Jetson Orin Nano</span><span>Raspberry Pi</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div class="eyebrow">Get in touch</div>
+    <h2>Let's work together</h2>
+    <p>Open to internships, research collaborations and AI engineering roles. The fastest way to reach me is email.</p>
+    <a class="btn" href="mailto:prasanna123sonu@gmail.com">prasanna123sonu@gmail.com</a>
+    <a class="btn ghost" href="https://github.com/Prasanna070705" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+
+<footer>© 2026 Dasigi Prasanna Jagannath</footer>
+
+</body>
+</html>
